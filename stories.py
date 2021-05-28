@@ -23,9 +23,11 @@ class Story:
 
         self.prompts = words
         self.template = text
+   
 
     def generate(self, answers):
         """Substitute answers into text."""
+
 
         text = self.template
 
@@ -48,7 +50,7 @@ story_list = [
     """Once upon a time in a long-ago {place}, there lived a
        large {adjective} {noun}. It loved to {verb} {plural_noun}."""),
 
-    Story(["place", "body_part", "verb", "adjective", "plural_noun", "liquid"],
+    Story(["place", "body_part", "verb", "adjective", "plural_nouns", "liquid"],
     """Betty went to the {place} to {verb}. She saw an {adjective} 
         man carrying {plural_nouns}.She scratched her {body_part} and 
         jumped into a pool of {liquid}."""),

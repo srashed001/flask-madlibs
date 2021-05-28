@@ -30,7 +30,8 @@ def create_words_input():
     if story_title == "painting thief":
         story = story_list[4]
 
-    session['current_story'] = story
+    session['words'] = story.prompts
+    session['text'] = story.template
     
     
 
@@ -46,7 +47,9 @@ def create_story():
     """ takes the input value for all of your words and generates a story based on text"""
     answers = dict(request.args)
 
-    new_story = session['current_story']
+    new_story = Story(session['words'], session['text'])
+
+    # new_story = session['current_story']
 
     story_text = new_story.generate(answers)
 
