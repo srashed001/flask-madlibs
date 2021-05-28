@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Home Page {% endblock %}
+
+{%block content %}
+<h1>MADLIBS HOME PAGE</h1>
+<h3>Select your story</h3>
+<form action="/words">
+    <label for="stories">Pick a Story:</label>
+    <select name="story" id="stories">
+        {% for story in stories %}
+        <option value="{{story}}">{{story}}</option>
+        {% endfor %}
+    </select>
+    <button>Submit</button>
+</form>
+{% endblock %}
